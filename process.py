@@ -16,7 +16,7 @@ out = pd.DataFrame([],columns=['时间','车速','加速度','发动机转速'])
 # 然后判断两次的时间差值，这里用了每行遍历
 for i in range(len(data['差值'])):
     item = data['差值'][i]
-#   如果时间差为1，说明是正常取样
+#   如果时间差为1，说明是正常取样，那就把这一行数据存到新的csv里面
     if item == 1:
         out.
         continue
