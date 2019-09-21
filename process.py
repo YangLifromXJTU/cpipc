@@ -4,7 +4,7 @@ from datetime import datetime
 import warnings
 warnings.filterwarnings('ignore')
 
-data = pd.read_csv('new1.csv',encoding='gbk')
+data = pd.read_csv('new3.csv',encoding='gbk')
 
 # 删掉不用的数据
 del data['之前时刻']
@@ -52,7 +52,7 @@ for i in range(len(data['差值'])):
             out = out.append([{'车速':0,'加速度':0,'发动机':1}],ignore_index=True)
 
             # 从间隔过长的地方进行分开
-            out.to_csv('new1_'+str(ver)+'.csv',encoding='gbk')
+            out.to_csv('./new3_process/new3_'+str(ver)+'.csv',encoding='gbk')
             out = pd.DataFrame([],columns=['车速','加速度','发动机'])
             ver += 1
             
@@ -69,4 +69,4 @@ for i in range(len(data['差值'])):
             # 最后把这一行数据填入新表
             out = out.append([{'车速':data['GPS车速'][i],'加速度':0,'发动机':1}],ignore_index=True)
 
-out.to_csv('new1_'+str(ver)+'.csv',encoding='gbk')
+out.to_csv('./new3_process/new3_'+str(ver)+'.csv',encoding='gbk')
