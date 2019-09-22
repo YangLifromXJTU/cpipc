@@ -2,8 +2,9 @@ import numpy as np
 import pandas as pd
 from sklearn import preprocessing
 
-data = pd.read_csv('./problem2_1/new1_105.csv',encoding='gbk')
-del data['Unnamed: 0']
+data = pd.read_csv('./problem2_1_feature.csv',encoding='gbk')
+# del data['Unnamed: 0']
+del data['index']
 a = data.head()
 
 # def pca(data,alpha=0.85):
