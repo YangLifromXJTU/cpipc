@@ -7,13 +7,13 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # 先写个data占位置
-f = [i for i in range(1,80)]
+f = [i for i in range(1,160)]
 ver = 1 # 用于标识是第几个文件
 for n in f:
 # for n in [3]:
     print(n)
     # data = pd.DataFrame()
-    data = pd.read_csv('./new3_process/new3_'+str(n)+'.csv',encoding='gbk')
+    data = pd.read_csv('./new1_process/new1_'+str(n)+'.csv',encoding='gbk')
     print(len(data['工况']))
     del data['发动机']
     # 怠速 -> 0, 加速 -> 1, 减速 -> 2, 匀速 -> 3
@@ -51,7 +51,7 @@ for n in f:
                     else:
                         if 1 not in cut['异常'].values:
                             print('save it at:',i)
-                            cut.to_csv('./new3_slice/new3_'+str(ver)+'.csv',encoding='gbk')
+                            cut.to_csv('./new1_slice/new1_'+str(ver)+'.csv',encoding='gbk')
                             ver += 1
                         # else:
                             # print('not proper at:',i)

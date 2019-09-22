@@ -5,7 +5,7 @@ import os
 
 warnings.filterwarnings('ignore')
 
-dirname = '.\\problem2_3'
+dirname = '.\\problem2_1'
 f_out = pd.DataFrame([],columns=['index','Pi','Pa','Pd','Pc',
                                  'Vm','Vmr','amax','amin','am',
                                  'vsd','asd','ni','na','nd','nc','num'])
@@ -42,4 +42,4 @@ for maindir,subdir,file_name_list in os.walk(dirname):
                                 ignore_index=True)
             i += 1
 
-f_out.to_csv('problem2_3_feature.csv',index=0)
+f_out.to_csv('problem2_1_feature.csv',index=0)
