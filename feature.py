@@ -11,7 +11,7 @@ f_out = pd.DataFrame([],columns=['index','Pi','Pa','Pd','Pc',
                                  'vsd','asd','ni','na','nd','nc','num'])
 i = 1
 for maindir,subdir,file_name_list in os.walk(dirname):
-    for filename in file_name_list:
+    for  filename in file_name_list:
         apath = os.path.join(maindir,filename)
         print(apath)
         data = pd.read_csv(apath,encoding='gbk')
