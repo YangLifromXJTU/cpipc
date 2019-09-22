@@ -6,7 +6,9 @@ import os
 warnings.filterwarnings('ignore')
 
 dirname = '.\\problem2_3'
-f_out = pd.DataFrame([],columns=['index','Pi','Pa','Pd','Pc','Vm','Vmr','amax','amin','am','vsd','asd'])
+f_out = pd.DataFrame([],columns=['index','Pi','Pa','Pd','Pc',
+                                 'Vm','Vmr','amax','amin','am',
+                                 'vsd','asd','ni','na','nd','nc','num'])
 i = 1
 for maindir,subdir,file_name_list in os.walk(dirname):
     for filename in file_name_list:
@@ -32,10 +34,12 @@ for maindir,subdir,file_name_list in os.walk(dirname):
             asd = sum([a**2 for a in list(data['加速度'].values)])/(data.shape[0]-1)
             asd = asd ** 0.5
 
+            num = filename.split('.')[0].split('_')[1]
+
             f_out = f_out.append([{'index':i,'Pi':Pi,'Pa':Pa,'Pd':Pd,'Pc':Pc,'Vm':Vm,'Vmr':Vmr,
-                        'amax':amax,'amin':amin,'am':am,'vsd':vsd,'asd':asd}],
-                        ignore_index=True)
+                                   'amax':amax,'amin':amin,'am':am,'vsd':vsd,'asd':asd,'ni':ser[0],
+                                   'na':ser[1],'nd':ser[2],'nc':ser[3],'num':num}],
+                                ignore_index=True)
             i += 1
 
 f_out.to_csv('problem2_3_feature.csv',index=0)
-    
