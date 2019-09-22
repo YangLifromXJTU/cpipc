@@ -6,7 +6,7 @@ data = pd.read_csv('./problem2_1/new1_105.csv',encoding='gbk')
 del data['Unnamed: 0']
 a = data.head()
 
-def pca(data,alpha=0.8):
+def pca(data,alpha=0.85):
     scaler = preprocessing.StandardScaler().fit(data)
     input = scaler.transform(data).astype(dtype='float32')
 
