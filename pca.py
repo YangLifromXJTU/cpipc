@@ -42,5 +42,5 @@ def pca(data,n_components):
         pca_eig[i+1] = [eigvalue[pca[i]]/sum(eigvalue),eigvector[pca[i]]]
     return pca_eig
 
-x = pca(np.asmatrix(a.values),n_components=3)
+x = pca(np.asmatrix(data.values),n_components=3)
 print(x)
